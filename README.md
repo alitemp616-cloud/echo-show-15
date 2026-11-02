@@ -1,8 +1,11 @@
 # Echo Show 15 — Family OS kiosk
 
-Shows the Family OS dashboard full-screen on the first-generation Echo Show 15 (2022):
-<https://family-os-lemon-three.vercel.app/>. Family OS is its own project
-(`Claude Code/Family OS/family-os`). This repo holds the device side only.
+Puts the Family OS dashboard (<https://family-os-lemon-three.vercel.app/>) on the first-generation Echo Show 15
+(AEOHY, Fire OS 7). Family OS is its own project (`Claude Code/Family OS/family-os`). This repo holds the bridge.
+
+**Current direction:** see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). ADB is unavailable on this device, so the APK
+in `android/` cannot be installed. The proposed route is an Alexa skill that opens Family OS in the Silk browser.
+Nothing on the Echo has been changed.
 
 ## Architecture
 
