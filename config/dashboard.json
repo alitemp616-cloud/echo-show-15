@@ -1,0 +1,5 @@
+{
+  "name": "Family OS",
+  "url": "https://family-os-lemon-three.vercel.app/",
+  "display": { "width": 1920, "height": 1080, "orientation": "landscape" }
+}
