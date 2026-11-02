@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Thin kiosk shell: the Family OS web app does the work; this only shows it full-screen and starts it after boot. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.ali.echoshow" android:versionCode="1" android:versionName="0.1">
+  <!-- shortcut: targetSdk 22 so runtime permissions are granted at install (the only SDK platform installed here); raise it before any store release -->
+  <uses-sdk android:minSdkVersion="22" android:targetSdkVersion="22"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <application android:label="Family OS" android:allowBackup="false">
+    <!-- Launcher only, not HOME: the device keeps its own home screen until you approve replacing it. -->
+    <activity android:name=".MainActivity" android:screenOrientation="landscape" android:launchMode="singleTask" android:configChanges="orientation|screenSize|keyboardHidden" android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <receiver android:name=".BootReceiver" android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+      </intent-filter>
+    </receiver>
+  </application>
+</manifest>
